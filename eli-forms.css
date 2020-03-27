@@ -22,12 +22,27 @@ ul.searchresult > li > * { pointer-events: none; }
 
 /* Form-Input */
 
-.input-field { background:rgba(255,255,255,1); border:2px solid rgba(0,0,0,.1); position: relative; padding:.35em; border-radius:.3em; transition:2s all; display: grid; align-items: center; }
+form { display:grid; grid-gap:.7em; }
+
+
+/* Change the white to any color ;) */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 30px rgba(255,255,255,.9) inset !important;
+    text-align:right;
+}
+input { text-align: right; transition:1s all; }
+input:focus { text-align: left; }
+
+
+.input-field { background:rgba(255,255,255,1); border:2px solid rgba(0,0,0,.1); position: relative; padding:.35em; border-radius:.3em; transition:2s all; display: grid; align-items: center; padding-right:.5em; width:calc(100% - 1em); }
 .input-field:hover { border-color: var(--input-border-color); }
 
 
-.input-field label { pointer-events: none; font-weight:400; text-transform: capitalize; font-family: sans-serif; padding:.4em; position:absolute; transition:.3s all; font-size:1em; color:rgba(0,0,0,0.5); }
-.input-field:hover label,.input-field label.active { top:-.7em; left:.2em; background:rgba(255,255,255,1);  font-size:.9em; padding:.1em .2em; animation:fadeIn .5s; color:var(--input-border-color); }
+.input-field label { pointer-events: none; font-weight:400; text-transform: capitalize; font-family: sans-serif; padding:.4em .2em; position:absolute; transition:.3s all; font-size:1em; color:rgba(0,0,0,0.5); }
+.input-field:hover label,.input-field label.active { top:-.7em; left:.2em; background:rgba(255,255,255,1);  font-size:.9em; padding:0em .2em; animation:fadeIn .5s; color:var(--input-border-color); }
 
 .input-field input { background:transparent; width:99%; display: block; padding:.3em; border:none; outline:none; font-size:1em; }
 
@@ -44,13 +59,13 @@ ul.searchresult > li > * { pointer-events: none; }
 
 
 .input-field.ga1a label { pointer-events: none; font-weight:400; left:1.5em; text-transform: capitalize; font-family: sans-serif; padding:.4em; position:absolute; transition:.3s all; font-size:1em; color:rgba(0,0,0,0.5); }
-.input-field.ga1a:hover label,.input-field.ga1a label.active { top:-.7em; left:.5em; background:rgba(255,255,255,1);  font-size:.9em; padding:.1em .2em; animation:fadeIn .5s; color:var(--input-border-color); }
+.input-field.ga1a:hover label,.input-field.ga1a label.active { top:-.7em; left:.5em; background:rgba(255,255,255,1);  font-size:.9em; padding:.0em .2em; animation:fadeIn .5s; color:var(--input-border-color); }
 
 .input-field.g1a label { pointer-events: none; font-weight:400; left:1.5em; text-transform: capitalize; font-family: sans-serif; padding:.4em; position:absolute; transition:.3s all; font-size:1em; color:rgba(0,0,0,0.5); }
-.input-field.g1a:hover label,.input-field.g1a label.active { top:-.7em; left:.5em; background:rgba(255,255,255,1);  font-size:.9em; padding:.1em .2em; animation:fadeIn .5s; color:var(--input-border-color); }
+.input-field.g1a:hover label,.input-field.g1a label.active { top:-.7em; left:.5em; background:rgba(255,255,255,1);  font-size:.9em; padding:.0em .2em; animation:fadeIn .5s; color:var(--input-border-color); }
 
 .input-field.ga1 label { pointer-events: none; font-weight:400; left:1.5em; text-transform: capitalize; font-family: sans-serif; padding:.4em; position:absolute; transition:.3s all; font-size:1em; color:rgba(0,0,0,0.5); }
-.input-field.ga1:hover label,.input-field.ga1 label.active { top:-.7em; left:.5em; background:rgba(255,255,255,1);  font-size:.9em; padding:.1em .2em; animation:fadeIn .5s; color:var(--input-border-color); }
+.input-field.ga1:hover label,.input-field.ga1 label.active { top:-.7em; left:.5em; background:rgba(255,255,255,1);  font-size:.9em; padding:.0em .2em; animation:fadeIn .5s; color:var(--input-border-color); }
 
 
 

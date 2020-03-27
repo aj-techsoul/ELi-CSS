@@ -16,6 +16,8 @@ function loadScript(url, callback)
 }
 
 loadScript("jquery.min.js");
+loadScript("swal/sweetalert2.all.min.js");
 loadScript('eli-forms.js');
+loadScript("eli-grid.js");
 loadScript("eli-validation.js");
 loadScript("eli_scripts.js");

@@ -1,9 +1,38 @@
 /// Form Validation
+
+function phonenumber(inputtxt)
+{
+  var phoneno = /^\d{10}$/;
+  if((inputtxt.value.match(phoneno)))
+        {
+          return true;
+        }
+      else
+        {
+          return false;
+        }
+}
+
+function checkvalidity(inp){
+  switch(inp.type){
+    case "tel":
+      var vvalid = phonenumber(inp);
+    break;
+    default:
+      var vvalid = true;
+    break;
+  }
+
+  return vvalid;
+}
+
+
 //Required eli_scripts
 function validSubmit(formid){
       console.log('Analyzing '+formid);
       var form = document.querySelector(formid);
     var required =  document.querySelectorAll(formid+" [required] ");
+  //  console.log(required);
     console.log(required.length +  " Required fields found");
   //  console.log(required);
     var checked = 0;
@@ -11,16 +40,18 @@ function validSubmit(formid){
       var i = 0;
       required.forEach((field) => {
         var x = field;
-        //console.log(required[i].validity.valid);
-        if(required[i].validity.valueMissing){
+
+        console.log(required[i].validity.valid);
+        if(required[i].validity.valid == false || checkvalidity(required[i]) == false ){
           required[i].validationMessage = " Please fill "+field.getAttribute('label');
           //console.log(i+" Please fill "+field.getAttribute('label'));
           required[i].offsetParent.style.borderColor = 'red';
 
           x.addEventListener('change', function(e) {
-            console.log(e.target.validity.valueMissing);
+            console.log(e.target.validity.valid);
+
             var inp = e.target;
-            if(inp.validity.valueMissing){
+            if(inp.validity.valid == false  || checkvalidity(inp) == false ){
                 inp.validationMessage = " Please fill "+field.getAttribute('label');
                 inp.offsetParent.style.borderColor = 'red';
               }
