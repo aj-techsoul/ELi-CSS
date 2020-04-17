@@ -3,6 +3,17 @@
 .border-dashed-3 { border:3px dashed rgba(0,0,0,.9); }
 .border-dashed-4 { border:4px dashed rgba(0,0,0,.9); }
 
+/* result */
+
 
 /* Buttons */
-.btn {  }
+.btn { padding:.2em; }
+
+/* toast */
+.toast:empty { display:none; }
+.toast { pointer-events: none; animation:zoomIn 1s; position:absolute; bottom:1em; right:1em; background:rgba(0,0,0,.05); padding:.5em 1em ; border-radius:5px; box-shadow:2px 2px 3px 0px rgba(0,0,0,.1); border:1px solid rgba(255,255,255,.7);  }
+.toast:after { position:relative; margin-top:-1em; bottom:0; left:0; content:""; background:red; width:0%; height:3px; animation:progress 3s;  }
+@keyframes progress {
+  0% { width:0%; }
+  100% { width:100%; }
+}

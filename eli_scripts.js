@@ -33,7 +33,7 @@ function eliSubmit(formid){
             if(status==='success')
             {
                 $('.result').html(data);
-                console.log(data);
+                 console.log(data);
               var tag = 'Success';
 
                $('.result').html("");
@@ -41,24 +41,44 @@ function eliSubmit(formid){
 
                 if(data.indexOf(tag) !== -1){
                 //   Materialize.toast(data, 5000,'green');
-                   Swal.fire({
-                      position: 'center',
-                      type: 'success',
-                      title: data,
-                      showConfirmButton: false,
-                      timer: 3000
-                    })
+const Toast = Swal.mixin({
+  toast: true,
+  position: 'top-end',
+  showConfirmButton: false,
+  timer: 1000,
+  timerProgressBar: true,
+  onOpen: (toast) => {
+    toast.addEventListener('mouseenter', Swal.stopTimer)
+    toast.addEventListener('mouseleave', Swal.resumeTimer)
+  }
+})
+
+Toast.fire({
+  icon: 'success',
+  title: data
+})
+
                 }
                 else
                 {
                 //    Materialize.toast(data, 5000,'red');
-                    Swal.fire({
-                       position: 'center',
-                       type: 'error',
-                       title: data,
-                       showConfirmButton: false,
-                       timer: 4500
-                     })
+                const Toast = Swal.mixin({
+                  toast: true,
+                  position: 'top-end',
+                  showConfirmButton: false,
+                  timer: 3000,
+                  timerProgressBar: true,
+                  onOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                  }
+                })
+
+                Toast.fire({
+                  icon: 'error',
+                  title: data
+                })
+
                 }
 
             }

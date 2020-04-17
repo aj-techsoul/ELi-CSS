@@ -395,7 +395,4 @@ function httpsuccess(ev){
   }
 }
 
-
-
-
 window.addEventListener('load', init(), false );

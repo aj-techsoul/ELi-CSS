@@ -24,7 +24,6 @@ ul.searchresult > li > * { pointer-events: none; }
 
 form { display:grid; grid-gap:.7em; }
 
-
 /* Change the white to any color ;) */
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
@@ -109,9 +108,9 @@ input.editable[readonly]:hover { background:rgba(0,0,0,.04); }
 
 
 /*  Btn */
-.btn { text-align: center; cursor: pointer; background:var(--btn-color); color:rgba(255,255,255,.9); font-weight:400; font-size:1em; padding:.5em 1em; border-radius:4px; text-transform: capitalize; transition:.5s all; }
-.btn.small { padding:.5em 1em; font-size:.8em; }
-.btn.big { padding:.7em 1.2em; font-size:1.1em; }
+.btn { text-align: center; cursor: pointer; background:var(--btn-color); color:rgba(255,255,255,.9); font-weight:400; font-size:1em; padding:.2em .5em; border-radius:4px; text-transform: capitalize; transition:.5s all;   text-align: center;  display: grid; grid-auto-flow: column; align-items: center; grid-gap: .2em; }
+.btn.small { padding:.2em .5em; font-size:.8em; }
+.btn.big { padding:.5em 1em; font-size:1.1em; }
 
 .btn:hover { color:rgba(255,255,255,1); background:var(--btn-colorhover); }
 
